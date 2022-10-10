@@ -17,4 +17,10 @@ body {
   max-width: 1540px;
   width: 100%;
   margin: 0 auto;
+}
+
+header .narrow-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

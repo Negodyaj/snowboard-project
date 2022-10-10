@@ -1,4 +1,6 @@
 @import 'variables';
+@import 'common-styles';
+@import 'mixins';
 
 * {
   box-sizing: border-box;
@@ -19,4 +21,8 @@ body {
   max-width: 1540px;
   width: 100%;
   margin: 0 auto;
+}
+
+header .narrow-container {
+  @include flex-between;
 }
