@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $main-font;
+  margin: 0;
+  background-color: $main-background;
+  color: $font-color;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1850px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.narrow-container {
+  max-width: 1540px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.inner-container {
+  width: 1150px;
+  margin-left: auto;
+}
+
+header {
+  background-color: white;
+
+  .narrow-container {
+    @include flex-between;
+    height: 130px;
+  }
+
+  nav {
+    display: flex;
+    gap: 50px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    color: $font-color;
+    text-decoration: none;
+  }
+}

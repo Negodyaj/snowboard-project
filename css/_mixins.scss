@@ -2,7 +2,7 @@
   @include flex(space-between, $alignment);
 }
 
-@mixin flex($justification: space-between, $alignment: flex-start) {
+@mixin flex($justification: flex-start, $alignment: flex-start) {
   display: flex;
   justify-content: $justification;
   align-items: $alignment;
