@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -18,25 +18,30 @@
   <header>
     <div class="narrow-container">
       <img src="./assets/logo.svg" alt="Our logo">
-      <nav>
+      <nav class="desktop-only">
         <a href="#" class="nav-link">О МАГАЗИНЕ</a>
         <a href="#" class="nav-link">КАТАЛОГ</a>
         <a href="#" class="nav-link">КОНТАКТЫ</a>
         <a href="#" class="nav-link">ЛИЧНЫЙ КАБИНЕТ</a>
         <a href="#" class="nav-link">КОРЗИНА (<span id="items-in-cart">0</span>)</a>
       </nav>
+      <button class="burger-menu mobile-only">burger</button>
     </div>
   </header>
   <main>
     <div class="hero-block">
       <div class="narrow-container">
-        <h1>ТЕХНОЛОГИЧНАЯ<br>ОДЕЖДА ДЛЯ ЗИМНЕГО<br>СПОРТА</h1>
+        <h1>ТЕХНОЛОГИЧНАЯ<br>ОДЕЖДА <br class="mobile-only">ДЛЯ ЗИМНЕГО<br>СПОРТА</h1>
       </div>
       <div class="container">
-        <img src="./assets/hero-image.png" alt="mountains">
+        <picture class="about-us-img">
+          <source srcset="./assets/hero-image-mobile.png" media="(max-width: 900px)">
+          <source srcset="./assets/hero-image.png">
+          <img srcset="./assets/hero-image.png" alt="mountains">
+        </picture>
       </div>
       <div class="narrow-container">
-        <div class="inner-container">
+        <div class="inner-container action-link-container">
           <p>НОВАЯ СНОУБОРДИЧЕСКАЯ<br>КОЛЛЕКЦИЯ</p>
           <a href="#">
             ЗА ПОКУПКАМИ
@@ -65,40 +70,97 @@
         </div>
       </div>
     </div>
-    <div class="catalog container">
+    <div class="catalog container desktop-only">
       <div class="narrow-container">
         <h2>КАТАЛОГ</h2>
       </div>
-      <div class="catalog-first-part">
-        <div class="grid-item wide">
-          <img src="./assets/Rectangle 27.png" alt="">
-          <a href="#">СНОУБОРДЫ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+      <div class="catalog-content">
+        <div class="catalog-grid">
+          <div class="grid-item wide">
+            <img src="./assets/Rectangle 27.png" alt="">
+            <a href="#">СНОУБОРДЫ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+          </div>
+          <div class="grid-item small">
+            <img src="./assets/Rectangle 28.png" alt="">
+            <a href="#">КРЕПЛЕНИЯ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+          </div>
         </div>
-        <div class="grid-item">
-          <img src="./assets/Rectangle 28.png" alt="">
-          <a href="#">КРЕПЛЕНИЯ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+        <div class="catalog-grid">
+          <div class="grid-item small">
+            <img src="./assets/Rectangle 29.png" alt="">
+            <a href="#">БОТИНКИ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+          </div>
+          <div class="grid-item wide">
+            <img src="./assets/Rectangle 31.png" alt="">
+            <a href="#">ОДЕЖДА <img src="./assets/link-arrow.svg" alt="arrow"></a>
+          </div>
         </div>
-      </div>
-      <div class="catalog-second-part">
-        <div class="grid-item">
-          <img src="./assets/Rectangle 29.png" alt="">
-          <a href="#">СНОУБОРДЫ <img src="./assets/link-arrow.svg" alt="arrow"></a>
-        </div>
-        <div class="grid-item wide">
-          <img src="./assets/Rectangle 31.png" alt="">
-          <a href="#">КРЕПЛЕНИЯ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+        <div class="catalog-bottom">
+          <div class="grid-item wide">
+            <img src="./assets/Rectangle 32.png" alt="">
+            <a href="#">МАСКИ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+          </div>
+          <div class="grid-item wide">
+            <img src="./assets/Rectangle 33.png" alt="">
+            <a href="#">ШЛЕМЫ И ЗАЩИТА <img src="./assets/link-arrow.svg" alt="arrow"></a>
+          </div>
+          <div class="grid-item wide">
+            <img src="./assets/Rectangle 34.png" alt="">
+            <a href="#">АКСЕССУАРЫ <img src="./assets/link-arrow.svg" alt="arrow"></a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="animated-line"></div>
-    <div class="bestsellers"></div>
+
+    <div class="animated-line desktop-only">
+      <div>YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
+      <div class="rotated-line">YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
+    </div>
+    <div class="bestsellers narrow-container desktop-only">
+      <div class="bestsellers-left">
+        <h2>ХИТЫ ПРОДАЖ</h2>
+        <p>Наилучшее качество материалов, новинки товаров и последние тренды разных стран</p>
+        <div class="buttons">
+          <button class="carousel-button left">left</button>
+          <button class="carousel-button right">right</button>
+        </div>
+      </div>
+      <div class="bestsellers-right">
+        <div class="product-card">
+          <img src="./assets/product1.png" alt="">
+          <span class="product-title">Женская сноубордическая куртка Sula</span>
+          <span class="price">17490 ₽</span>
+        </div>
+        <div class="product-card">
+          <img src="./assets/product2.png" alt="">
+          <span class="product-title">Мужская сноубордическая куртка Sula</span>
+          <span class="price">19490 ₽</span>
+        </div>
+        <div class="product-card">
+          <img src="./assets/product3.png" alt="">
+          <span class="product-title">Женская сноубордическая куртка Sula</span>
+          <span class="price">15220 ₽</span>
+        </div>
+        <div class="product-card">
+          <img src="./assets/product2.png" alt="">
+          <span class="product-title">Мужская сноубордическая куртка Sula</span>
+          <span class="price">13320 ₽</span>
+        </div>
+      </div>
+    </div>
     <div class="music-player"></div>
     <div class="popular-brands"></div>
-    <div class="animated-line"></div>
+    <div class="animated-line desktop-only">
+      <div>YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
+      <div class="rotated-line">YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
+    </div>
     <div class="pretty-image"></div>
     <div class="social-networks narrow-container"></div>
   </main>
   <footer class="narrow-container"></footer>
+
+  <!-- <script src="./first.js"></script> -->
+  <script src="./second.js"></script>
 </body>
 
 </html>

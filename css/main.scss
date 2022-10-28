@@ -46,7 +46,7 @@ h2 {
   
   .inner-container {
     @include flex-between;
-    margin-top: -38px;
+    margin-top: -42px;
   }
 
   a {
@@ -88,22 +88,158 @@ h2 {
 .catalog {
   margin-top: 190px;
 
+  h2 {
+    margin-bottom: 30px;
+  }
+
   a {
-    margin-left: auto;
+    justify-content: flex-end;
+    margin-top: 20px;
   }
 
-  .catalog-first-part,
-  .catalog-second-part {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  $grid-gap: 35px;
+
+  .catalog-grid {
+    display: flex;
+    height: 941px;
     margin-bottom: 103px;
+    gap: $grid-gap;
   }
 
-  .grid-item.wide {
-    grid-column: span 2;
+  .small {
+    align-self: flex-end;
   }
 
-  .grid-item:not(.wide) {
-    grid-row-start: 2;
+  .catalog-bottom {
+    display: flex;
+    gap: $grid-gap;
+  }
+}
+
+.animated-line {
+  font-family: $secondary-font;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 280px 0;
+
+  .rotated-line {
+    position: relative;
+    left: 113px;
+    transform: rotateZ(180deg);
+  }
+}
+
+.bestsellers {
+  $image-height: 450px;
+  $top-padding: 9px;
+  display: flex;
+
+  .bestsellers-left {
+    margin-right: 20px;
+    width: 370px;
+    height: $image-height + $top-padding;
+    position: relative;
+    flex-shrink: 0;
+
+    p {
+      font-size: 24px;
+      line-height: 28px;
+      margin-top: 50px;
+    }
+  }
+
+  .buttons {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .bestsellers-right {
+    padding-top: $top-padding;
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+
+    img {
+      height: $image-height;
+    }
+
+    .product-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+}
+
+@media (min-width: 1391px) and (max-width: 1870px) {
+  .hero-block {
+    padding-top: 40px;
+
+    h1 {
+      font-size: 80px;
+      line-height: 94px;
+    }
+
+    picture,
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1390px) {
+  .hero-block {
+    padding-top: 30px;
+
+    h1 {
+      font-size: 70px;
+      line-height: 86px;
+    }
+
+    picture,
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 35px;
+    line-height: 41px;
+  }
+
+  .hero-block {
+    padding-top: 45px;
+
+    img {
+      width: 100%;
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    .action-link-container {
+      flex-direction: column;
+    }
   }
 }
