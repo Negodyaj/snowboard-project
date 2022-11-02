@@ -1,49 +1,86 @@
-let a = getNumberFromUser('please enter the value for A');
-let b = getNumberFromUser('please enter the value for B');
-let resultOfFunction;
+const products = [
+  {
+    id: 1,
+    imageSrc: './assets/product1.png',
+    title: 'Женская сноубордическая куртка Sula',
+    price: 17490
+  }, {
+    id: 2,
+    imageSrc: './assets/product2.png',
+    title: 'Мужская сноубордическая куртка Sula',
+    price: 19490
+  }, {
+    id: 3,
+    imageSrc: './assets/product3.png',
+    title: 'Женская сноубордическая куртка Sula',
+    price: 15220
+  }, {
+    id: 4,
+    imageSrc: './assets/product2.png',
+    title: 'Мужская сноубордическая куртка Sula',
+    price: 13320
+  }, {
+    id: 5,
+    imageSrc: './assets/product1.png',
+    title: 'Женская сноубордическая куртка Sula',
+    price: 17490
+  }, {
+    id: 6,
+    imageSrc: './assets/product2.png',
+    title: 'Мужская сноубордическая куртка Sula',
+    price: 11490
+  }, {
+    id: 7,
+    imageSrc: './assets/product3.png',
+    title: 'Женская сноубордическая куртка Sula',
+    price: 16490
+  }, {
+    id: 8,
+    imageSrc: './assets/product2.png',
+    title: 'Мужская сноубордическая куртка Sula',
+    price: 19490
+  },
+];
 
-console.log(`IT'S TIME FOR EXPERIMENTS!!!!!!!!!!!))))`);
-resultOfFunction = calculateFormula(a, b);
-console.log(resultOfFunction);
+const cardsContainer = document.querySelector('.bestsellers-right');
 
-a = 123;
-b = 456;
-
-console.log(calculateFormula(a, b));
-
-calculateFormula(c, d);
-const c = 14;
-const d = 71;
-
-function calculateFormula(valA = 42, valB = 10) {
-  const result = calculateFirstPart(valA, valB) / (valB - valA);
-  return result;
+for (const product of products) {
+  renderProductCard(product);
 }
 
-function calculateFirstPart(a, b) {
-  return 5*a - b*b;
+function renderProductCard(product) {
+  const newElement = document.createElement('div');
+  cardsContainer.appendChild(newElement);
+  newElement.outerHTML = getProductCardMarkup(product);
 }
 
-const _calculateFormula = (valA = 42, valB = 10) => {
-  const result = _calculateFirstPart(valA, valB) / (valB - valA);
-  return result;
+function getProductCardMarkup(product) {
+  return `
+    <div class="product-card">
+      <img src="${product.imageSrc}" alt="">
+      <span class="product-title">${product.title}</span>
+      <span class="price">${product.price} ₽</span>
+    </div>
+  `;
 }
 
-const _calculateFirstPart = function(a, b) {
-  return 5*a - b*b;
-}
+const firstCard = cardsContainer.children[0];
+const leftButton = document.querySelector('.carousel-button.left');
+const rightButton = document.querySelector('.carousel-button.right');
+let currentSlideNumber = 0;
 
-function getNumberFromUser(message) {
-  let userValue;
-  let flag = false;
+function handleCarouselButtonClick(direction) {
+  currentSlideNumber += direction;
+  firstCard.style.marginLeft = `${-390 * currentSlideNumber}px`;
+  if (currentSlideNumber === 0) {
+    leftButton.setAttribute('disabled', true);
+  } else {
+    leftButton.removeAttribute('disabled');
+  }
 
-  do {
-    if (flag) {
-      alert(`you've entered a wrong value. please do it again`);
-    }
-    userValue = +prompt(message);
-    flag = true;
-  } while (isNaN(userValue))
-
-  return userValue;
+  if (currentSlideNumber === products.length - 3) {
+    rightButton.classList.add('disabled');
+  } else {
+    rightButton.classList.remove('disabled');
+  }
 }

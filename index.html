@@ -56,7 +56,7 @@
     <div class="about-us narrow-container">
       <h2>О НАС</h2>
       <div class="about-us-content inner-container">
-        <p>YETI — новый магазин одежды для сноубордистов. В нашем магазине вы найдете только самые последние модели,
+        <p><span>YETI</span> — новый магазин одежды для сноубордистов. В нашем магазине вы найдете только самые последние модели,
           которые производятся по современным технологиям
           <br>из самых качественных материалов.
         </p>
@@ -113,54 +113,44 @@
     </div>
 
     <div class="animated-line desktop-only">
-      <div>YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
-      <div class="rotated-line">YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
+      <div class="yeti-line"><span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> </div>
+      <div class="yeti-line rotated-line"><span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> </div>
     </div>
-    <div class="bestsellers narrow-container desktop-only">
+    <div class="bestsellers desktop-only">
       <div class="bestsellers-left">
         <h2>ХИТЫ ПРОДАЖ</h2>
         <p>Наилучшее качество материалов, новинки товаров и последние тренды разных стран</p>
         <div class="buttons">
-          <button class="carousel-button left">left</button>
-          <button class="carousel-button right">right</button>
+          <button class="carousel-button left" disabled onclick="handleCarouselButtonClick(-1)">left</button>
+          <button class="carousel-button right" onclick="handleCarouselButtonClick(1)">right</button>
         </div>
       </div>
-      <div class="bestsellers-right">
-        <div class="product-card">
-          <img src="./assets/product1.png" alt="">
-          <span class="product-title">Женская сноубордическая куртка Sula</span>
-          <span class="price">17490 ₽</span>
-        </div>
-        <div class="product-card">
-          <img src="./assets/product2.png" alt="">
-          <span class="product-title">Мужская сноубордическая куртка Sula</span>
-          <span class="price">19490 ₽</span>
-        </div>
-        <div class="product-card">
-          <img src="./assets/product3.png" alt="">
-          <span class="product-title">Женская сноубордическая куртка Sula</span>
-          <span class="price">15220 ₽</span>
-        </div>
-        <div class="product-card">
-          <img src="./assets/product2.png" alt="">
-          <span class="product-title">Мужская сноубордическая куртка Sula</span>
-          <span class="price">13320 ₽</span>
-        </div>
-      </div>
+      <div class="bestsellers-right"></div>
     </div>
     <div class="music-player"></div>
     <div class="popular-brands"></div>
     <div class="animated-line desktop-only">
-      <div>YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
-      <div class="rotated-line">YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI YETI</div>
+      <div id="first-line"><span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> </div>
+      <div id="second-line" class="rotated-line"><span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> <span>YETI</span> </div>
     </div>
     <div class="pretty-image"></div>
     <div class="social-networks narrow-container"></div>
   </main>
   <footer class="narrow-container"></footer>
 
-  <!-- <script src="./first.js"></script> -->
-  <script src="./second.js"></script>
+  <script>
+    const firstLineElem = document.getElementById('first-line');
+    const secondLineElem = document.getElementById('second-line');
+    setInterval(() => {
+      const firstChild = firstLineElem.children[0];
+      firstLineElem.appendChild(firstChild);
+      const secondChild = secondLineElem.children[0];
+      secondLineElem.appendChild(secondChild);
+    }, 2000);
+  </script>
+
+  <script src="./first.js"></script>
+  <!-- <script src="./second.js"></script> -->
 </body>
 
 </html>
